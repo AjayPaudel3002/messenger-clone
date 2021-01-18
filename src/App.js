@@ -10,13 +10,13 @@ import io from "socket.io-client";
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user")) || "";
-  console.log(user);
+  // console.log(user);
+  const domain = process.env.REACT_APP_API_DOMAIN || "";
+  const socketUrl = process.env.REACT_APP_API_DOMAIN || "http://localhost:5000";
   const [authenticated, setAuthenticated] = useState(user || "");
-  const socket = io.connect("http://localhost:5000", {
+  const socket = io.connect(socketUrl, {
     transports: ["websocket"],
   });
-  const domain = process.env.REACT_APP_API_DOMAIN || "";
-
   return (
     <Router>
       <Switch>
