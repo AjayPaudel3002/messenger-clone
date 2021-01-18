@@ -37,6 +37,7 @@
 .chat-history {
   overflow-y: scroll;
   height: 600px;
+  
 }
 
 .message-screen,
@@ -251,6 +252,7 @@
   color: #0099ff !important;
   margin: 0 10px !important;
 }
+
 
 .Nav-icons .MuiSvgIcon-root {
   margin: 0 10px !important;

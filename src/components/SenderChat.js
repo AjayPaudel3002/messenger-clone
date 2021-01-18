@@ -67,7 +67,7 @@ const SenderChat = ({ msg, socket, activeStatus, domain }) => {
         setLike(data.like);
       }
     });
-  }, []);
+  }, [activeStatus]);
 
   const deleteMsg = async (value) => {
     let data = {};

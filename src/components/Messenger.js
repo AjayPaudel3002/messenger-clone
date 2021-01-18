@@ -65,6 +65,7 @@ const Messenger = ({ socket, authenticated, setAuthenticated, domain }) => {
                 socket={socket}
                 userId={userDetails._id}
                 activeUsers={onlineUsers}
+                domain={domain}
               />
             </div>
           </div>

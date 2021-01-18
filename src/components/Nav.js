@@ -14,9 +14,9 @@ const Nav = ({ user, setAuthenticated }) => {
   };
   return (
     <>
-      <div className="pt-3 nav">
+      <div className=" nav pt-3">
         <div className="row row d-flex align-items-center">
-          <div className="col-2 col-lg-1">
+          <div className="col-2 col-lg-1" onClick={() => history.push("/")}>
             <img
               src={
                 user.profilePicture
@@ -28,8 +28,11 @@ const Nav = ({ user, setAuthenticated }) => {
               width="40"
             />
           </div>
-          <div className="col-4 col-lg-4 Nav-profile ml-3">Chats</div>
-          <div className="col-5 col-lg-6 Nav-icons ml-2">
+          <div className="col-4 col-lg-3 Nav-profile pl-5">Chats</div>
+          <div
+            className="col-5 col-lg-7 Nav-icons pl-5  "
+            style={{ padding: "0px" }}
+          >
             {/* <MoreHorizIcon /> */}
             <div className="dropdown">
               <button

@@ -79,7 +79,7 @@ const MessageScreen = ({ receiver, socket, user, activeUsers, domain }) => {
         setTyping(true);
         setTimeout(() => {
           setTyping(false);
-        }, 10000);
+        }, 5000);
       } else {
         setTyping(false);
       }
@@ -115,7 +115,6 @@ const MessageScreen = ({ receiver, socket, user, activeUsers, domain }) => {
           location: history.location.pathname,
         };
         socket.emit("createMessage", res.data);
-        socket.emit("checkScree", messageDetials);
       } catch (err) {
         console.log(err);
       }
