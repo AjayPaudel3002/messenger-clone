@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-const Login = ({ authenticated, domain }) => {
+const Login = ({ authenticated, domain, registrationUrl }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(false);
@@ -73,12 +73,16 @@ const Login = ({ authenticated, domain }) => {
               >
                 Login
               </button>
-              <div className="pt-3">
-                Create an account ? <Link to={`/register`}>Register</Link>
-              </div>
               <hr className="mt-4" />
             </form>
-            {errors && <p>Password and/or email are incorrect.</p>}
+            <div>
+              <button
+                className="btn btn-primary "
+                onClick={() => window.open(registrationUrl, "_blank")}
+              >
+                Register on Facebook
+              </button>
+            </div>
           </div>
         </div>
       </div>

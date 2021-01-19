@@ -13,6 +13,9 @@ function App() {
   // console.log(user);
   const domain = process.env.REACT_APP_API_DOMAIN || "";
   const socketUrl = process.env.REACT_APP_API_DOMAIN || "http://localhost:5000";
+  const registrationUrl =
+    process.env.REACT_APP_REGISTRATION_URL || "http://localhost:3001/register";
+  //Registration is to be done on Facebook clone App .
   const [authenticated, setAuthenticated] = useState(user || "");
   const socket = io.connect(socketUrl, {
     transports: ["websocket"],
@@ -24,7 +27,12 @@ function App() {
           path="/"
           exact
           render={(props) => (
-            <Login {...props} authenticated={authenticated} domain={domain} />
+            <Login
+              {...props}
+              authenticated={authenticated}
+              domain={domain}
+              registrationUrl={registrationUrl}
+            />
           )}
         />
         <PrivateRoute
